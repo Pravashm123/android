@@ -1,0 +1,120 @@
+               <?php
+              session_start();
+require("connection.php");
+$id=$_GET['id'];
+$sql=mysqli_query($con,"select * from user where id='$id'");
+$result=(mysqli_fetch_array($sql));
+?> 
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+  <meta name="author" content="GeeksLabs">
+  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+<title>Animal Shelter |EditProfile Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/design.css">
+
+</head>
+
+
+
+
+ <div id="edit-profile" class="tab-pane">
+                    <section class="jumbotron">
+                      <div class="panel-body bio-graph-info">
+                        <h1 class="text-center">Update Profile Info</h1>
+                        <div class="col-lg-12">
+                          <div class="container">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                              <img src="user/<?php echo $result['pic'];?>" width='200' height='200' style="border-radius: 50%">
+                            </div>
+                            <div class="col-md-4"></div>
+                          </div>
+                          <br>
+                        </div>
+  
+                        <form class="form-horizontal" role="form" action="proileupdate.php" method="POST" enctype="multipart/form-data">
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">ID</label>
+                            <div class="col-lg-6">
+                              <input type="text" class="form-control" id="f-name" placeholder=" " value="<?php echo $result['id']; ?>" disabled>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">First Name</label>
+                            <div class="col-lg-6">
+                             <input type="text" name="fname" class="form-control" id="f-name" placeholder=" " value="<?php echo $result['fname'];?>">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Last Name</label>
+                            <div class="col-lg-6">
+                              <input type="text" name="lname" class="form-control" id="l-name" placeholder=" " value="<?php echo $result['lname'];?>">
+                            </div>
+                          </div>
+                          <br>
+
+                           <div class="form-group">
+                            <label class="col-lg-2 control-label">PostalAddress</label>
+                            <div class="col-lg-6">
+                              <input type="text"  name="address" class="form-control" id="postaladdress" placeholder=" " value="<?php echo $result['postaladdress'];?>">
+                            </div>
+                          </div>
+                         <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">PostCode</label>
+                            <div class="col-lg-6">
+                              <input type="text" name="code" class="form-control" id="c-name" placeholder=" " value="<?php echo $result['postcode'];?>">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                              <input type="email" name="email" class="form-control" id="b-day" placeholder=" " value="<?php echo $result['email'];?>">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Username</label>
+                            <div class="col-lg-6">
+                              <input type="text" name="username" class="form-control" id="occupation" placeholder=" " value="<?php echo $result['username'];?>">
+                            </div>
+                          </div>
+         
+      <!--    <p><?php echo $result['pic'];?></p> -->
+                       
+
+                          <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                              <button type="submit" class="btn btn-primary" name="submit">Save</button><br><br>
+                              <button type="button" class="btn btn-danger" onclick="location.href='user.php'">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+       
+      </body>
+</html>   

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel View Point | Registration Page</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/design.css">
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" style="margin-top: 4%;">
+    <h1 class="text-center" style="margin-bottom: 2%; padding: 5px;">Register Form</h1>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="jumbotron" style=" background: -webkit-linear-gradient(white,grey,white,grey,white);">
+
+
+          <form role="form"  id="signup" action="*">
+            <div class="form-group" >
+              <label for="utype"> <i class="fa fa-users"></i> UserType:</label>
+              <select class="form-control" name="utype" id="utype"  >
+                  <option value="index">select</option>
+                  <option value="admin">Admin</option>
+                  <option value="normal">Normal</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="firstname"> First Name :</label>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname"> Middle Name :</label>
+              <input type="text" class="form-control" id="mname" name="mname" placeholder="Enter Last Name" required>
+            </div>
+
+
+            <div class="form-group">
+              <label for="lastname"> Last Name :</label>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="address">  Address :</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Enter Postal-Address" required>
+            </div>
+          
+             <div class="form-group">
+              <label for="DOB"> Contact :</label>
+              <input type="number" class="form-control" id="contact" name="address" placeholder="Enter Tel No." required>
+              
+             </div>
+
+            <div class="form-group">
+              <label for="code"> email address :</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+
+
+            <div class="form-group">
+              <label for="username"><span class="glyphicon glyphicon-user"></span> Username :</label>
+              <input type="text" class="form-control" id="uname" name="username" placeholder="Enter UserName" >
+            </div>
+            <div id="uncheck"></div>
+
+            <div class="form-group">
+              <label for="pass"><i class="fa fa-key"></i> Password</label>
+              <input type="password" class="form-control" id="pass" name="password" placeholder="Enter password" required>
+            </div>
+
+             <!-- <div class="form-group">
+              <label for="cpass"><span class="glyphicon glyphicon-eye-open"></span> Confirm Password</label>
+              <input type="password" class="form-control" id="cpsw" name="cpass" placeholder="Re-Enter password" required onchange="javascript:password_check()">
+            </div>
+            <div id="passcheck"></div> -->
+            
+            <button class="btn btn-primary form-control" type="submit" name="signup" id="signup-btn"><span class="glyphicon glyphicon-save"></span>Sign Up</button><br><br>
+
+            <p style="text-align: center;">Already Have an Account?? <a href="login.html">Log In</a></p>
+
+          </form>
+       
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+	<!-- login and registration modal -->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/query.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"
+></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/signup.js"></script>
+</body>
+</html>

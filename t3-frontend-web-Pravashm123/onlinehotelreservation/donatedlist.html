@@ -1,0 +1,67 @@
+
+
+   <table border='1' width='100%' style=" color: white; font-size: 20px; background-color: rgba(36, 22, 22, 0.43); ">
+
+      
+<tr>
+<th class="text-center" style="padding: 5px;"> &pound;Amount </th>
+<th class="text-center" style="padding: 5px;">FirstName</th>
+<th class="text-center" style="padding: 5px;">LastName</th>
+<th class="text-center" style="padding: 5px;">City</th>
+<th class="text-center" style="padding: 5px;">Country</th>
+<th class="text-center" style="padding: 5px;">Zipcode</th>
+<th class="text-center" style="padding: 5px;">EmailAddress</th>
+<th class="text-center" style="padding: 5px;">Phone</th>
+<th class="text-center" style="padding: 5px;">Payment Method</th>
+</tr>
+
+
+ <?php
+  $con=mysqli_connect("localhost","root","","pravash_160452") or die("Unsucessful");
+  $sql="select * from donate";
+  $result=mysqli_query($con,$sql);
+  while($row=mysqli_fetch_array($result)){
+    ?>
+<tr>
+ 
+  <td><?php echo $row['amount'];?></td>
+  <td><?php echo $row['firstname'];?></td>
+  <td><?php echo $row['lastname'];?></td>
+  <td><?php echo $row['city'];?></td>
+  <td><?php echo $row['country'];?></td>
+  <td><?php echo $row['zipcode'];?></td>
+  <td><?php echo $row['emailaddress'];?></td>
+   <td><?php echo $row['phone'];?></td>
+  <td><?php echo $row['payment'];?></td>
+
+
+    
+</tr>
+<?php
+}
+?>
+ </table>
+ <br>
+ <br>
+
+          <?php
+require("connection.php");
+$sql=mysqli_query($con,"select  SUM(amount)from donate");
+$result=(mysqli_fetch_array($sql));
+echo "<h1>Total Amount Donated by Customer is &pound; " .$result[0]."</h1>";
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

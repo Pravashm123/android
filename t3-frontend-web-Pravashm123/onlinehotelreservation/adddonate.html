@@ -1,0 +1,32 @@
+<?php
+require("connection.php");
+if(isset($_POST['submit'])){
+$amount=$_POST['amount'];
+$firstname=$_POST['firstname'];
+$lastname=$_POST['lastname'];
+$city=$_POST['city'];
+$country=$_POST['country'];
+$zipcode=$_POST['zipcode'];
+$emailaddress=$_POST['emailaddress'];
+$phone=$_POST['phone'];
+$payment=$_POST['payment'];
+//$contact=$_POST['contact'];
+mysqli_query($con, "insert into donate (amount,firstname,lastname,city,country,zipcode,emailaddress,phone,payment) values('$amount','$firstname','$lastname','$city',
+  '$country','$zipcode','$emailaddress','$phone','$payment')");
+// if($con->query(mysqli_query)){
+//  echo "inserted";
+// }
+// else{
+//  "failed";
+
+// }
+//echo "Inserted Sucessfully";
+  echo "<script>
+           alert('Thanks for help to our pets');
+            window.location='user.php';
+      </script>";
+
+}
+
+
+?>

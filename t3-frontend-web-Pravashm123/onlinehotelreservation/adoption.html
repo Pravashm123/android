@@ -1,0 +1,20 @@
+<?php
+session_start();
+require("connection.php");
+if(isset($_POST['submit'])){
+
+$pet=$_POST['pet'];
+	// $creator=$_SESSION['username'];
+	  $username=$_SESSION['username'];
+	  $email=$_POST['email'];
+	  $status=$_POST['status'];
+
+mysqli_query($con, "insert into adopt (username,email,status,pet) values('$username','$email','$status','$pet')")or die("error"); 
+
+
+echo "<script>
+           alert('Thanks for adopting animal');
+            window.location='user.php';
+      </script>";
+}
+?>

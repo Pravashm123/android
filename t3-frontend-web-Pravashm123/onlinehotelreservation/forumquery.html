@@ -1,0 +1,65 @@
+<?php
+session_start();
+require("connection.php");
+if(isset($_POST['posted'])){
+ //$username=$_POST['username'];
+$title=$_POST['title'];
+$content=$_POST['content'];
+$postdate=date("Y-m-d");
+	// $creator=$_SESSION['username'];
+	  $username=$_SESSION['username'];
+	    //  $_SESSION['username']=$username;
+
+//$contact=$_POST['contact'];
+mysqli_query($con, "insert into post (title,content,postdate,username) values('$title','$content','$postdate','$username')")or die("error"); 
+// if($con->query(mysqli_query)){
+// 	echo "inserted";
+// }
+// else{
+// 	"failed";
+
+// }
+// if ($password != $cpass) {
+// 	# code...
+// 	die("password didn't match");
+// }
+//header("location:index.php");
+
+echo "<script>
+           alert('Your Post has been posted sucessfully');
+            window.location='userforum.php';
+      </script>";
+}
+?>
+
+<?php
+require("connection.php");
+if(isset($_POST['cmt'])){
+ //$username=$_POST['username'];
+$comment=$_POST['comment'];
+	// $creator=$_SESSION['username'];
+	 $username=$_SESSION['username'];
+	 $date=date("Y-m-d");
+	    //  $_SESSION['username']=$username;
+
+//$contact=$_POST['contact'];
+mysqli_query($con,"insert into comment (cmt,username,date) values('$comment','$username','$date')") or die("error"); 
+// if($con->query(mysqli_query)){
+// 	echo "inserted";
+// }
+// else{
+// 	"failed";
+
+// }
+// if ($password != $cpass) {
+// 	# code...
+// 	die("password didn't match");
+// }
+//header("location:index.php");
+
+echo "<script>
+           alert('Commented Sucessfully');
+            window.location='userforum.php';
+      </script>";
+}
+?>
